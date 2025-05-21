@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snatched Hobo Small</title>
+  <style>
+    @font-face {
+      font-family: 'Trueno';
+      src: url('path-to-trueno-font.woff2') format('woff2');
+    }
+    
+    body {
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #111;
+    }
+    
+    header {
+      padding: 20px 5%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #000;
+    }
+    
+    .product-container {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 5%;
+      gap: 40px;
+    }
+    
+    .product-image {
+      flex: 1;
+      position: relative;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .product-details {
+      flex: 1;
+      padding: 20px;
+    }
+    
+    .product-title {
+      font-size: 28px;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+    
+    .product-price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+    
+    .product-description {
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .add-to-cart {
+      display: inline-block;
+      background: #000;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+    
+    .add-to-cart:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+    
+    .product-features {
+      margin: 30px 0;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .feature-icon {
+      margin-right: 10px;
+      font-size: 20px;
+      color: #000;
+    }
+    
+    .cart-count {
+      background: #000;
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+      position: relative;
+      top: -5px;
+    }
+    
+    footer {
+      background: #f8f8f8;
+      padding: 30px 5%;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #777;
+    }
+    
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column;
+      }
+      
+      nav a {
+        margin-left: 15px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="window.location.href='gentle.html'">Pearls and Posh</div>
+    <nav>
+      <a href="gentle.html">Главная</a>
+      <a href="glasses.html">Очки</a>
+      <a href="cart.html">Корзина <span id="cartCounter" class="cart-count">0</span></a>
+    </nav>
+  </header>
+  
+  <div class="product-container">
+    <div class="product-image">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw57eb582e/images/large/S33YD0030_M10091_962_F.jpg?sw=1024&q=80" alt="Snatched Hobo Small">
+    </div>
+    
+    <div class="product-details">
+      <h1 class="product-title">MM115 Leather</h1>
+      <div class="product-price">20 000 ₸</div>
+      
+      <div class="product-description">
+        <p>Модель с кожаными вставками на дужках и сдержанной серой цветовой гаммой. Совмещает в себе спортивную функциональность и элементы роскоши. Отличается высокой посадкой, мягкими переходами в дизайне и матовой отделкой. Стильно смотрится в образах в стиле "люкс кэжуал" или премиального streetwear.
+
+</p>
+      </div>
+      
+      <div class="product-features">
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Материал: итальянский ацетат</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <span>Цвет: серый</span>
+        </div>
+      </div>
+      
+      <button class="add-to-cart" id="addToCart">Добавить в корзину</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2023 Pearls and Posh. Все права защищены.
+  </footer>
+
+  <script>
+    // Корзина
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCounter = document.getElementById('cartCounter');
+    
+    // Обновляем счетчик корзины
+    function updateCartCounter() {
+      cartCounter.textContent = cartItems.length;
+    }
+    
+    updateCartCounter();
+    
+    // Добавление в корзину
+    document.getElementById('addToCart').addEventListener('click', function() {
+      const product = {
+        id: 'SB1WG0054-P7247',
+        name: 'MM115 Leather',
+        price: 20000,
+        currency: '₸',
+        image: 'https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw44b22cf6/images/large/SB1WG0054_P7247_H3809_F.jpg?sw=1024&q=80',
+        quantity: 1
+      };
+      
+      // Проверяем, есть ли уже товар в корзине
+      const existingItem = cartItems.find(item => item.id === product.id);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cartItems.push(product);
+      }
+      
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      updateCartCounter();
+      
+      alert('MM115 Leather добавлена в корзину за 20 000 ₸!');
+    });
+  </script>
+</body>
+</html>

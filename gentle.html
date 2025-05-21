@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pearls and Posh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Trueno:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: auto;
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      background-color: #fafafa;
+      color: #111;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      position: relative;
+    }
+    nav a:hover { color: #666; }
+    #cart-counter {
+      position: absolute;
+      top: -6px; right: -16px;
+      background: #111; color: #fff;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+
+    .hero {
+      position: relative;
+      height: 90vh;
+      margin-top: 80px;
+      background: url('https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Library-Sites-margiela-shared/default/dwc406fdbb/MM/070525Update/MM_HOMEPAGE_REFRESH_250425_HERO_BANNER_DESKTOP_02.jpg?sw=3000') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 { font-size: 3rem; letter-spacing: 3px; }
+
+    .section {
+      padding: 80px 5%;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .category {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .category:hover { transform: translateY(-6px); }
+    .category img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .category h3 {
+      padding: 20px;
+      font-size: 20px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Стили для галереи */
+    .photo-gallery {
+      padding: 60px 5%;
+      background-color: #f5f5f5;
+    }
+    .photo-gallery h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+    .gallery-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .gallery-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+    .gallery-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 0 15px;
+    }
+    .gallery-slide img {
+      width: 600px;
+      height: 600px;
+      display: block;
+      margin: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .gallery-nav button {
+      background: rgba(255,255,255,0.7);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .gallery-dot.active {
+      background: #111;
+    }
+
+    #contact {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    #contact p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 40px 5%;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 8px 15px 0 0;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        padding: 0 10px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .gallery-slide img {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 6px 10px 0 0;
+      }
+
+      .hero {
+        height: 70vh;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 4%;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .photo-gallery h2 {
+        font-size: 24px;
+      }
+
+      .gallery-slide img {
+        height: 400px;
+      }
+
+      #contact p {
+        font-size: 14px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" onclick="window.location.href='gentle.html'">Pearls and Posh</div>
+  <nav>
+    <a href="#categories">Категории</a>
+    <a href="111.html">О нас</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="cart.html">Корзина <span id="cart-counter"></span></a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Timeless Accessories for Every Moment</h1>
+</section>
+
+<section id="categories" class="section">
+  <h2>Категории товаров</h2>
+  <div class="categories">
+    <a href="bags.html" class="category">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwe065555e/images/large/SB1WG0054_P4745_T8013_T.jpg?sw=1024&q=80" alt="Сумки"/>
+      <h3>Сумки</h3>
+    </a>
+    <a href="bracelets.html" class="category">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw310d48fe/images/large/SM1UQ0097_P6476_965_T.jpg?sw=1024&q=80" alt="Браслеты"/>
+      <h3>Браслеты</h3>
+    </a>
+    <a href="glasses.html" class="category">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw1b90dcd4/images/large/S33YC0064_M10076_961_T.jpg?sw=1024&q=80" alt="Очки"/>
+      <h3>Очки</h3>
+    </a>
+    <a href="belts.html" class="category">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw6a2663a1/images/large/S33YX0131_SV0052_961_F.jpg?sw=1024&q=80" alt="Парфюмы"/>
+      <h3>Парфюмы</h3>
+    </a>
+  </div>
+</section>
+
+<!-- Новая секция с фотогалереей -->
+<section class="photo-gallery">
+  <h2>Скоро в продаже</h2>
+  <div class="gallery-container">
+    <div class="gallery-slider">
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/f26a5fc4-8fb7-4c7e-bc76-0f43753b97c1/11004430_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 1">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/9ee7655a-f01c-41f8-bdc4-a760a193e7ed/11004435_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 2">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/d239e351-b00d-410a-87b6-89cfcfe4f1d9/11004425_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 3">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/92ec4615-bd0b-47b3-8e6b-137130c384bd/BPJHPRY2QXKH_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 4">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/d41fde10-fcd0-45cc-966b-0bbaea48b210/XQPYDI79D4YR_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 5">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/0a7bfb81-3629-460e-8161-766defac5e9d/1FZ4Q3PRYFO4H_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 5">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/88cc3bb5-f157-46d7-9e2e-710c7c25f175/SF96G7SM4A69_LOOK_BOOK_FIRST.jpg?width=1400" alt="Look 5">
+      </div>
+    </div>
+    <div class="gallery-nav">
+      <button class="gallery-prev">❮</button>
+      <button class="gallery-next">❯</button>
+    </div>
+    <div class="gallery-dots"></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Контакты</h2>
+  <p>
+    Свяжитесь с нами по email: contact@pearlsandposh.com<br>
+    или по телефону: +7 (900) 123-45-67
+  </p>
+  <div style="margin-top: 20px;">
+    <a href="https://wa.me/79001234567" target="_blank" style="margin: 0 15px; color: #25D366; font-size: 24px;">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/pearlsandposh" target="_blank" style="margin: 0 15px; color: #C13584; font-size: 24px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Pearls and Posh. Все права защищены.
+</footer>
+
+<script>
+  // Скрипт для галереи
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.gallery-slider');
+    const slides = document.querySelectorAll('.gallery-slide');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    const dotsContainer = document.querySelector('.gallery-dots');
+    
+    let currentSlide = 0;
+    let slideInterval;
+    const slideTime = 3000; // Интервал смены слайдов (3 секунды)
+    
+    // Создаем точки навигации
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('gallery-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.gallery-dot');
+    
+    // Функция перехода к конкретному слайду
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      updateSlider();
+      resetInterval();
+    }
+    
+    // Функция обновления слайдера
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      // Обновляем активную точку
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+    
+    // Следующий слайд
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlider();
+    }
+    
+    // Предыдущий слайд
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+    
+    // Сброс интервала автоматической прокрутки
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, slideTime);
+    }
+    
+    // Обработчики кнопок
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetInterval();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetInterval();
+    });
+    
+    // Запускаем автоматическую прокрутку
+    resetInterval();
+    
+    // Останавливаем прокрутку при наведении
+    const gallery = document.querySelector('.gallery-container');
+    gallery.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    gallery.addEventListener('mouseleave', resetInterval);
+  });
+
+  // Скрипт для корзины (оставлен без изменений)
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    saveCart();
+    renderCart();
+  }
+
+  function removeFromCart(index) {
+    if (cart[index].quantity > 1) {
+      cart[index].quantity -= 1;
+    } else {
+      cart.splice(index, 1);
+    }
+    saveCart();
+    renderCart();
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cart-container');
+    const totalBox = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutSection = document.getElementById('checkout-section');
+
+    container.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p>Корзина пуста</p>';
+      totalBox.textContent = '';
+      checkoutBtn.style.display = 'none';
+      checkoutSection.style.display = 'none';
+    } else {
+      cart.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span><strong>${item.name}</strong> — ${item.quantity} шт. × ${item.price.toLocaleString()} ₸</span>
+          <button onclick="removeFromCart(${i})">−</button>
+        `;
+        container.appendChild(div);
+        total += item.price * item.quantity;
+      });
+      totalBox.textContent = `Итого: ${total.toLocaleString()} ₸`;
+      checkoutBtn.style.display = 'inline-block';
+    }
+
+    document.getElementById('cart-counter').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  // Инициализация корзины
+  document.addEventListener('DOMContentLoaded', () => {
+    renderCart();
+
+    const checkoutBtn = document.getElementById('checkout-btn');
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener('click', () => {
+        document.getElementById('checkout-section').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('checkout-section').style.display = 'block';
+      });
+    }
+
+    const paymentForm = document.getElementById('payment-form');
+    if (paymentForm) {
+      paymentForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Спасибо за покупку!');
+        cart = [];
+        saveCart();
+        renderCart();
+        document.getElementById('checkout-section').style.display = 'none';
+      });
+    }
+  });
+</script>
+</body>
+</html>

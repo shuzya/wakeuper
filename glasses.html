@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сумки — Pearls and Posh</title>
+  <style>
+    body {
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #111;
+    }
+    header {
+      padding: 20px 5%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 0 5% 60px;
+    }
+    .product {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .product:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .product-info a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #000;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .product-info a:hover {
+      background: #333;
+    }
+
+    .hero-image {
+      position: relative;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .hero-video-container video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      letter-spacing: 3px;
+      color: white;
+      margin: 0;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" onclick="window.location.href='gentle.html'">Pearls and Posh</div>
+  <nav>
+    <a href="gentle.html">Главная</a>
+    <a href="cart.html">Корзина</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-video-container">
+    <!-- Видео -->
+    <video autoplay loop muted playsinline>
+      <source src="https://gm-prd-resource.gentlemonster.com/contents/main/5ed25a7e-df12-4e39-ad49-02dd3c900783/jewelry_mainbanner_pc.mp4" type="video/mp4">
+    </video>
+
+    <br><h1>MM6 x Gentle Monster</h1>
+  </div>
+</section>
+<h1>Очки</h1>
+
+<div class="grid">
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw6fe023d0/images/large/S33YC0060_M10072_961_F.jpg?sw=1024&q=80" alt="Сумка 1">
+    <div class="product-info">
+      <h2>Gentle Monster MM201</h2>
+ <p>20 000 ₸</p>
+      <a href="aa.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwd7f2b77b/images/large/S33YC0070_M10069_962_F.jpg?sw=1024&q=80" alt="Сумка 2">
+    <div class="product-info">
+      <h2>MM X Gentle Monster </h2>
+ <p>20 000 ₸</p>
+      <a href="bb.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw57eb582e/images/large/S33YD0030_M10091_962_F.jpg?sw=1024&q=80" alt="Сумка 3">
+    <div class="product-info">
+      <h2>MM115 Leather</h2>
+ <p>20 000 ₸</p>
+      <a href="cc.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw8ca8c5d1/images/large/S33YD0011_M10091_961_F.jpg?sw=1024&q=80" alt="Сумка 4">
+    <div class="product-info">
+      <h2>Gentle Monster MM103</h2>
+ <p>20 000 ₸</p>
+      <a href="dd.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw24782022/images/large/S33YC0075_M10074_962_F.jpg?sw=1024&q=80" alt="Сумка 5">
+    <div class="product-info">
+      <h2>Gentle Monster MM105</h2>
+ <p>20 000 ₸</p>
+      <a href="ee.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw86d6ef1b/images/large/S33YC0062_M10074_961_F.jpg?sw=1024&q=80" alt="Сумка 6">
+    <div class="product-info">
+      <h2>Gentle Monster MM108</h2>
+ <p>20 000 ₸</p>
+      <a href="ff.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw40ac9ac6/images/large/S33YD0002_M10082_961_F.jpg?sw=1024&q=80" alt="Сумка 7">
+    <div class="product-info">
+      <h2>Gentle Monster MM104</h2>
+ <p>20 000 ₸</p>
+      <a href="gg.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw8accf332/images/large/S33YD0006_M10086_961_F.jpg?sw=1024&q=80" alt="Сумка 8">
+    <div class="product-info">
+      <h2>Gentle Monster MM109</h2>
+      <p>20 000 ₸</p>
+      <a href="jj.html">Смотреть</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

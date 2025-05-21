@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Корзина — Pearls and Posh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Trueno:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      background-color: #fafafa;
+      color: #111;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      position: relative;
+    }
+    nav a:hover { color: #666; }
+    #cart-counter {
+      position: absolute;
+      top: -6px; right: -16px;
+      background: #111; color: #fff;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 120px 5% 80px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .cart-item button {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #checkout-btn {
+      display: none;
+      background:#2ecc71;
+      color:white;
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      float: right;
+      margin-top: 20px;
+    }
+
+    #checkout-section {
+      display: none;
+      margin-top: 60px;
+    }
+
+    #payment-form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #payment-form input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #payment-form button {
+      background:#111;
+      color:white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 40px 5%;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="gentle.html">Pearls and Posh</a></div>
+  <nav>
+    <a href="gentle.html">Главная</a>
+    <a href="111.html">О нас</a>
+    <a href="cart.html">Корзина <span id="cart-counter"></span></a>
+  </nav>
+</header>
+
+<section class="section" id="cart-section">
+  <h2>Ваша корзина</h2>
+  <div id="cart-container"></div>
+  <div class="total" id="cart-total"></div>
+  <button id="checkout-btn">Перейти к оплате</button>
+</section>
+
+<section class="section" id="checkout-section">
+  <h2>Оплата</h2>
+  <form id="payment-form">
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="text" placeholder="Номер карты" required pattern="\d{16}">
+    <input type="text" placeholder="Адрес доставки" required>
+    <button type="submit">Оплатить</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Pearls and Posh. Все права защищены.
+</footer>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    renderCart();
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cart-container');
+    const totalBox = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutSection = document.getElementById('checkout-section');
+
+    container.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p>Корзина пуста</p>';
+      totalBox.textContent = '';
+      checkoutBtn.style.display = 'none';
+      checkoutSection.style.display = 'none';
+    } else {
+      cart.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span><strong>${item.name}</strong> — ${item.price.toLocaleString()} ₸</span>
+          <button onclick="removeFromCart(${i})">Удалить</button>
+        `;
+        container.appendChild(div);
+        total += item.price;
+      });
+      totalBox.textContent = `Итого: ${total.toLocaleString()} ₸`;
+      checkoutBtn.style.display = 'inline-block';
+    }
+
+    document.getElementById('cart-counter').textContent = cart.length ? cart.length : '';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderCart();
+
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      document.getElementById('checkout-section').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('checkout-section').style.display = 'block';
+    });
+
+    document.getElementById('payment-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Спасибо за покупку!');
+      cart = [];
+      saveCart();
+      renderCart();
+      document.getElementById('checkout-section').style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

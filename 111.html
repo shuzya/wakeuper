@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pearls and Posh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Trueno:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      background-color: #fafafa;
+      color: #111;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      position: relative;
+    }
+    nav a:hover { color: #666; }
+
+    .hero {
+      position: relative;
+      height: 90vh;
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      background: #000; /* для резервного фона */
+    }
+
+    /* Контейнер для видео и текста */
+    .hero-video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Стили для видео */
+    .hero-video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Стили для надписи */
+    .hero h1 {
+      position: absolute;
+      top: 50%; /* Позиционируем по центру */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      letter-spacing: 3px;
+      color: white;
+      margin: 0;
+    }
+
+    .section {
+      padding: 80px 5%;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+    }
+
+    #about, #contact {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    #about p, #contact p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    footer {
+      background: #f5f5f5;
+      text-align: center;
+      padding: 40px 5%;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #999;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" onclick="window.location.href='gentle.html'">Pearls and Posh</div>
+  <nav>
+    <a href="gentle.html">Главная</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-video-container">
+    <video autoplay loop muted playsinline>
+      <source src="https://assets.vogue.com/clips/681a61ccafca01345fc2773a/720p/pass/GettyImages-2213613501.mp4.mp4" type="video/mp4">
+    </video>
+    <h1>Pearls and Posh</h1>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>О нас</h2>
+  <p>
+    Pearls and Posh — это не просто магазин аксессуаров, это место, где сливаются элегантность, стиль и уникальность. Мы создали наш бренд, вдохновившись идеей, что каждая деталь в одежде или аксессуарах может рассказать свою собственную историю. В мире моды, где часто теряется индивидуальность, мы стремимся привнести в каждое изделие душу и характер, чтобы наши клиенты могли почувствовать себя особенными и неповторимыми.
+  </p>
+
+  <p>Магазин Pearls and Posh был основан в 2025 году с целью предоставить женщинам и мужчинам по всему миру уникальные аксессуары, которые подчеркивают их стиль и индивидуальность. Мы с самого начала ориентировались на премиум-класс и искали идеальный баланс между качеством, эстетикой и доступностью.</p>
+
+  <p>Наши коллекции вдохновлены лучшими мировыми трендами, но при этом каждая вещь у нас — это не просто модный аксессуар, а маленькое произведение искусства. Мы работаем с ограниченными сериями и тщательно отбираем материалы, чтобы каждая сумка, браслет или пара очков не только радовали глаз, но и служили долгие годы.</p>
+
+  <p>Наши клиенты — это люди, которые ценят красоту и стиль во всем. Мы гордимся тем, что с каждым днем становимся частью их повседневной жизни, придавая уверенности и утонченности каждому образу.</p>
+
+  <p>Pearls and Posh — это не просто магазин. Это сообщество людей, которые любят себя и свой стиль, ценят качество и стремятся выделяться среди серых масс. Мы верим, что аксессуары могут стать не просто дополнением, а важной частью образа, которая расскажет о человеке больше, чем слова.</p>
+
+  <p>Присоединяйтесь к нам, и откройте для себя мир, в котором аксессуары — это не просто детали, а важные элементы вашего стиля и образа жизни. Pearls and Posh — для тех, кто ценит утонченность и изысканность в каждом моменте своей жизни.</p>
+</section>
+
+<footer>
+  © 2025 Pearls and Posh. Все права защищены.
+</footer>
+
+</body>
+</html>

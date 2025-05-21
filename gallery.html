@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея Pearls and Posh</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #fdfdfd;
+      color: #111;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 20px 5%;
+    }
+
+    .photo-block {
+      text-align: center;
+    }
+
+    .photo-block img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-block img:hover {
+      transform: scale(1.03);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Галерея Pearls and Posh</h1>
+
+<div class="gallery">
+  <div class="photo-block">
+    <a href="c.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwc02070c2/images/large/SB1WD0029_P4745_T8013_S.jpg?sw=1024&q=80" alt="Фото 1">
+    </a>
+    <p class="caption">Snatched asymmetric</p>
+  </div>
+  <div class="photo-block">
+    <a href="a.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw09277de4/images/large/SB1WG0054_P7247_H3809_T.jpg?sw=1024&q=80" alt="Фото 2">
+    </a>
+    <p class="caption">Snatched Classique Small</p>
+  </div>
+  <div class="photo-block">
+    <a href="d.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw9452f419/images/large/SB1WG0054_P4745_T2003_T.jpg?sw=1024&q=80" alt="Фото 3">
+    </a>
+    <p class="caption">Classique small Velvet</p>
+  </div>
+  <div class="photo-block">
+    <a href="b.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwfa948b4d/images/large/SB1WG0054_P4745_T8013_S.jpg?sw=1024&q=80" alt="Фото 4">
+    </a>
+    <p class="caption">Snatched hobo micro</p>
+  </div>
+  <div class="photo-block">
+    <a href="3.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw59fb630f/images/large/SM1UY0083_P6476_965_T.jpg?sw=1024&q=80" alt="Фото 5">
+    </a>
+    <p class="caption">Star earrings</p>
+  </div>
+  <div class="photo-block">
+    <a href="1.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwf0e137cd/images/large/SM1UY0082_SV0158_952_T.jpg?sw=1024&q=80" alt="Фото 6">
+    </a>
+    <p class="caption">Star hoop earrings</p>
+  </div>
+  <div class="photo-block">
+    <a href="7.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw27924a6c/images/large/SM1UY0064_SV0158_950_T.jpg?sw=1024&q=80" alt="Фото 7">
+    </a>
+    <p class="caption">Numerical Earrings</p>
+  </div>
+  <div class="photo-block">
+    <a href="6.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw43c00f5d/images/large/SM1UY0064_SV0158_951_T.jpg?sw=1024&q=80" alt="Фото 8">
+    </a>
+    <p class="caption">Chain Ring</p>
+  </div>
+  <div class="photo-block">
+    <a href="bb.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw853dd587/images/large/S33YC0057_M10069_961_T.jpg?sw=1024&q=80" alt="Фото 9">
+    </a>
+    <p class="caption">MM X Gentle Monster</p>
+  </div>
+  <div class="photo-block">
+    <a href="ff.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwd8c7a185/images/large/S33YC0059_M10071_961_T.jpg?sw=1024&q=80" alt="Фото 10">
+    </a>
+    <p class="caption">Gentle Monster MM108</p>
+  </div>
+  <div class="photo-block">
+    <a href="gg.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwd14adb04/images/large/S33YC0078_M10078_963_T.jpg?sw=1024&q=80" alt="Фото 11">
+    </a>
+    <p class="caption">Gentle Monster MM104</p>
+  </div>
+  <div class="photo-block">
+    <a href="cc.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw55de5a84/images/large/S33YD0030_M10091_962_T.jpg?sw=1024&q=80" alt="Фото 12">
+    </a>
+    <p class="caption">MM115 Leather</p>
+  </div>
+  <div class="photo-block">
+    <a href="f.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw0e40fa87/images/large/SB2WG0021_P6434_T8013_T.jpg?sw=1024&q=80" alt="Фото 13">
+    </a>
+    <p class="caption">Glam Slam cyclе</p>
+  </div>
+  <div class="photo-block">
+    <a href="aa.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwe7a479e2/images/large/S33YC0063_M10075_961_T.jpg?sw=1024&q=80" alt="Фото 14">
+    </a>
+    <p class="caption">Gentle Monster MM201</p>
+  </div>
+  <div class="photo-block">
+    <a href="j.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw904d674a/images/large/SB1WG0021_P4300_T8058_S.jpg?sw=1024&q=80" alt="Фото 15">
+    </a>
+    <p class="caption">Snatched hobo small</p>
+  </div>
+  <div class="photo-block">
+    <a href="dd.html">
+      <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw6f974776/images/large/S33YD0011_M10091_961_T.jpg?sw=1024&q=80" alt="Фото 16">
+    </a>
+    <p class="caption">Gentle Monster MM103
+</p>
+  </div>
+</body>
+</html>
+

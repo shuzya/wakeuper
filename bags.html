@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сумки — Pearls and Posh</title>
+  <style>
+    body {
+      font-family: 'Trueno', 'Century Gothic', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #111;
+    }
+    header {
+      padding: 20px 5%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #333;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 0 5% 60px;
+    }
+    .product {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .product:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .product-info a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #000;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .product-info a:hover {
+      background: #333;
+    }
+
+    .hero-image {
+      position: relative;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 42px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); 
+}
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" onclick="window.location.href='gentle.html'">Pearls and Posh</div>
+  <nav>
+    <a href="gentle.html">Главная</a>
+    <a href="cart.html">Корзина</a>
+  </nav>
+</header>
+
+<!-- Блок с фото и надписью -->
+<div class="hero-image">
+  <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Library-Sites-margiela-shared/default/dw1c7c493f/mm_packaging/MM_BAG_BANNER_DESKTOP.jpg?sw=3000" alt="Баннер">
+  <div class="hero-text">Avant-Première Spring-Summer 2025</div>
+</div>
+
+<h1>Сумки</h1>
+
+<div class="grid">
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw44b22cf6/images/large/SB1WG0054_P7247_H3809_F.jpg?sw=1024&q=80" alt="Сумка 1">
+    <div class="product-info">
+      <h2>Snatched Classique Small</h2>
+      <p>70 000 ₸</p>
+      <a href="a.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw9453bb1f/images/large/SB1WG0054_P4745_T8013_F.jpg?sw=1024&q=80" alt="Сумка 2">
+    <div class="product-info">
+      <h2>Snatched hobo micro</h2>
+      <p>90 000 ₸</p>
+      <a href="b.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw5c8a1a51/images/large/SB1WG0055_P4745_T2152_F.jpg?sw=1024&q=80" alt="Сумка 3">
+    <div class="product-info">
+      <h2>Snatched asymmetric</h2>
+      <p>80 000 ₸</p>
+      <a href="c.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw98bc722e/images/large/SB1WG0054_P4745_T2003_F.jpg?sw=1024&q=80" alt="Сумка 4">
+    <div class="product-info">
+      <h2>Сlassique small Velvet</h2>
+      <p>100 000 ₸</p>
+      <a href="d.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw92006404/images/large/SB1WG0040_P1511_H9677_F.jpg?sw=1024&q=80" alt="Сумка 5">
+    <div class="product-info">
+      <h2>Glam Slam flap small</h2>
+      <p>60 000 ₸</p>
+      <a href="e.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwfc51cd40/images/large/SB2WG0021_P6434_T8013_F.jpg?sw=1024&q=80" alt="Сумка 6">
+    <div class="product-info">
+      <h2>Glam Slam cyclе</h2>
+      <p>80 000 ₸</p>
+      <a href="f.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dwa4192490/images/large/SB1WG0019_P4300_H9677_F.jpg?sw=1024&q=80" alt="Сумка 7">
+    <div class="product-info">
+      <h2>Glam Slam Camera Bag</h2>
+      <p>70 000 ₸</p>
+      <a href="g.html">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://www.maisonmargiela.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-margiela-master-catalog/default/dw1c525519/images/large/SB1WG0021_P4300_T8058_F.jpg?sw=1024&q=80" alt="Сумка 8">
+    <div class="product-info">
+      <h2>Snatched hobo small</h2>
+      <p>90 000 ₸</p>
+     <a href="j.html">Смотреть</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
